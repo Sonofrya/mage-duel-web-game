@@ -1,0 +1,285 @@
+@font-face {
+    font-family: 'Minecraft';
+    src: url(../fonts/minecraft.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Minecraft';
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../backimg/start.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.burger-menu {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.burger-line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.burger-menu.active .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu {
+    position: fixed;
+    top: 40px;
+    left: 10px;
+    width: 200px;
+    background-color: #303030;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.burger {
+    list-style: none;
+    padding: 20px 0;
+    text-align: center;
+    
+}
+
+.burger_li {
+    margin: 20px 0px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: larger;
+}
+
+.burger_li a{
+    text-decoration: none;
+    color: white;
+}
+
+.burger_li a:hover{
+    color: #FFE629;
+}
+
+.burger li:hover {
+    color: #FFE629;
+}
+
+.wrapper {
+    color: white;
+}
+
+.waiting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vh;
+    margin: auto;
+    display: flex;
+    background-color: rgba(48, 48, 48, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 40px;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.waiting ul {
+    margin-top: 60px;
+    margin-bottom: 160px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.waiting ul li {
+    font-size: larger;
+    margin: 20px 60px;
+    position: relative;
+}
+
+.waiting ul li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../markers/not.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.waiting ul li.ready::before {
+    background-image: url(../markers/ready.svg);
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.invite {
+    display: block;
+    margin-top: 0 auto;
+    color: white;
+    width: 187px;
+    height: 59px;
+    background: #51E03F;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.invite:hover {
+    background-color: #8CEC7F;
+}
+
+.btn {
+    display: block;
+    margin-top: 0 auto;
+    color: white;
+    width: 187px;
+    height: 59px;
+    background: var(--btn-bg-color, #51E03F);
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--btn-hover-bg-color, #8CEC7F);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(48, 48, 48);
+    margin: 7% auto;
+    padding: 20px;
+    width: 50%;
+    height: 60%;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #FFE629;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-title {
+    line-height: 1.12;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.nick {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid white;
+    border-radius: 16px;
+    font-size: 16px;
+    color: white;
+}
+
+.send {
+    width: 187px;
+    height: 59px;
+    padding: 10px;
+    font-size: 24px;
+    background-color: #51E03F;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.send:hover {
+    background-color: #8CEC7F;
+}

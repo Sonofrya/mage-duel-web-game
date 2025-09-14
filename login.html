@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Войти</title>
+    <link rel="stylesheet" href="style/login.css">
+    <link rel="icon" href="https://se.ifmo.ru/o/favicon/" type="image/x-icon">
+</head>
+
+<body>
+    <main class="zzz">
+        <div><h1 class="ew">Недоступно на мобильных устройствах</h1></div>
+    </main>
+    <div class="wrapper">
+        <div class="title">
+            <h1 class="title1">ЭПИЧНЫЕ СХВАТКИ</h1>
+            <h2 class="title2">БОЕВЫХ МАГОВ</h2>
+        </div>
+
+        <div class="box-form">
+            <form id="loginForm" action="login.php" method="post" class="box-form">
+                <h3>Вход</h3>
+                <div class="form">
+                    <div class="input-box form-name">
+                        <input type="text" name="login" placeholder="Логин" required>
+                    </div>
+                    <div class="input-box form-pass">
+                        <input type="password" name="password" placeholder="Введите пароль" required>
+                    </div>
+                </div>
+                <div class="remember">
+                    <a href="#">Забыли пароль?</a>
+                </div>
+                <div id="loginMessage"></div>
+                <button type="submit" class="btn">Войти</button>
+                <div class="reg">
+                    <p>Ещё нет аккаунта?<a href="reg.html"> Регистрация</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/logreg.js"></script>
+</body>
+</html>

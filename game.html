@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style\game.css">
+</head>
+<body>
+    
+    <div class="burger-menu" id="burgerMenu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+    </div>
+    <div class="menu" id="menu">
+        <ul class="burger">
+            <li class="burger_li"><a href="ingame_rules.html" target="_blank">Правила</a></li>
+            <li class="burger_li" id="leave-btn">Выйти</li>
+        </ul>
+    </div>
+    <main class="wrapper">
+        <div class="players-container" id="playersContainer">
+           
+        </div>
+
+            <div class="cards">
+                <div class="card cardtype_1"></div>
+                <div class="card cardtype_2"></div>
+                <div class="card cardtype_3"></div>
+            </div>
+            
+        </div>
+        <div class="me">
+            <div class="mychar">
+                <p class="wtf"></p>
+                <div class="myicon">
+                    <div class="mystats">                   
+                    <div class="tokens"><img src="char_icons\Ellipse1.svg" class="mytokens"><span class="tokens-count"></span></div>
+                    <div class="lives"><img src="char_icons\Vector.svg" class="myhp"><span class="lives-count"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards-effect">
+                <div class="mycards">
+                    
+                </div>
+                <div class="effect"></div>
+            </div>
+            <div class="active">
+                <button type="button" class="play">Сыграть</button>
+                <div class="time"></div>
+            </div>
+        </div>
+    </main>
+    <script src="js\game.js"></script>
+</body>
+</html>

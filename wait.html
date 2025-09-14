@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/wait.css">
+</head>
+<body>
+    <div class="burger-menu" id="burgerMenu">
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+        <div class="burger-line"></div>
+    </div>
+    <div class="menu" id="menu">
+        <ul class="burger">
+            <li class="burger_li"><a href="ingame_rules.html" target="_blank">Правила</a></li>
+            <li class="burger_li" id="leave-btn">Выйти</li>
+        </ul>
+    </div>
+    <div class="wrapper">
+        <div class="waiting">
+            <h2 id="roomNumber">Комната 1</h2>
+            <ul id="playerList">
+                
+            </ul>
+            <div class="button">
+                <button type="button" class="invite">Пригласить</button>
+                <button onclick="toggleButton()" type="button" class="btn">Готов</button>
+            </div>
+
+            <div class="popup" id="popup">
+                <div class="popup-content">
+                    <span class="close-btn" id="close-btn">&times;</span>
+                    <h2 class="popup-title">Введите никнейм пользователя</h2>
+                    <input type="text" class="nick" placeholder="Введите никнейм">
+                    <button type="button" class="send">Отправить</button>
+                </div>
+            </div>
+
+            <script src="js/wait.js"></script>
+        </div>
+    </div>
+</body>
+</html>

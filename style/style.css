@@ -1,0 +1,152 @@
+
+@font-face {
+    font-family:'Minecraft' ;
+    src: url(../fonts/minecraft.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Minecraft';
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../backimg/start.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    
+    color: white;
+}
+
+.box-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form {
+    width: 100%;
+}
+
+form {
+    margin: auto;
+    width: 420px;
+    background-color: rgba(48, 48, 48, 0.8);
+    backdrop-filter: blur(10px); 
+    border-radius: 16px;
+    padding: 30px 40px;
+}
+
+.title {
+    paint-order: stroke fill;
+    -webkit-text-stroke:10px #000000;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.title2 {
+    margin-top: 5px;
+    font-size: 10vh;
+}
+
+.wrapper h3 {
+    font-size: 3vh;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+}
+
+.form-name {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.form-pass {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid white; 
+    border-radius: 16px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+    
+}
+
+.remember {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+    text-align: left;
+}
+
+.remember a {
+    color: white;
+    text-decoration: none;
+}
+
+.remember a:hover {
+    color: yellow;
+}
+
+.wrapper .btn {
+    margin-top: 50px;
+    color: white;
+    width: 187px;
+    height: 59px;
+    background: #51E03F;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.wrapper .btn:hover {
+    background-color: #8CEC7F; 
+}
+
+.wrapper .btn:active {
+    background-color: #286E1F;
+}
+
+.wrapper .reg {
+    font-size: 14.5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reg p a {
+    color: white;
+    text-decoration: none;
+}
+
+.reg p a:hover {
+    color: yellow;
+}

@@ -1,0 +1,167 @@
+@font-face {
+    font-family:'Minecraft' ;
+    src: url(../fonts/minecraft.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Minecraft';
+}
+
+body{
+    min-height: 100vh;
+    background: url(../backimg/start.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    color: white;
+    
+}
+
+.rules-box{
+    background-color: rgba(30, 30, 30, 0.8) ;
+    width: 50%;
+    min-height: 100vh;
+}
+
+.mage{
+    width: 100%; 
+}
+
+.rules{
+    padding: 4vh;
+}
+
+.rules-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.back{
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    left: 0 ;
+}
+
+.back:hover{
+    color: #FFE629;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+}
+
+.text{
+    margin: 4vh 0vh;
+    font-size: x-large;
+    line-height: 1.12;
+}
+
+.cards{
+    margin-left: 12vh;
+    padding: 0vh 10vh;
+    width: 75vh;
+    height: 100vh;
+    
+    display: flex;
+    
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cards div{
+    
+    width: 13vh;
+    height: 18vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2vh 0.5vh;
+    border-radius: 3.1%;
+}
+
+.card1{
+    background-image:url(../demo-cards/image1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card2{
+    background-image:url(../demo-cards/image2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card3{
+    background-image:url(../demo-cards/image3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card4{
+    background-image:url(../demo-cards/image1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card5{
+    background-image:url(../demo-cards/image4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card6{
+    background-image:url(../demo-cards/image3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card7{
+    background-image:url(../demo-cards/image1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card8{
+    background-image:url(../demo-cards/image2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card9{
+    background-image:url(../demo-cards/image4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card10{
+    background-image:url(../demo-cards/image4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card11{
+    background-image:url(../demo-cards/image4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.card12{
+    background-image:url(../demo-cards/image3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
