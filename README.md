@@ -1,105 +1,105 @@
-# ⚔️ Mage Duel - Multiplayer Fantasy Card Game
+# ⚔️ Mage Duel - Многопользовательская фэнтези карточная игра
 
-**A real-time multiplayer fantasy card battle game built with PHP, WebSocket, and Docker.**
+**Многопользовательская карточная игра в реальном времени, построенная на PHP, WebSocket и Docker.**
 
-## 🎮 Game Overview
+## 🎮 Обзор игры
 
-Mage Duel is an innovative multiplayer card game where players take on the role of powerful mages competing in magical duels. The game features a unique two-phase combat system with strategic card combinations and real-time WebSocket communication.
+Mage Duel - это инновационная многопользовательская карточная игра, где игроки берут на себя роль могущественных магов, соревнующихся в магических дуэлях. Игра включает уникальную двухфазную боевую систему со стратегическими комбинациями карт и общением в реальном времени через WebSocket.
 
-## ✨ Key Features
+## ✨ Основные функции
 
-- 🔥 **Real-time Multiplayer**: WebSocket-powered live gameplay
-- ⚡ **Two-Phase Combat**: Strategic planning followed by explosive spell execution  
-- 🎯 **Card Combinations**: Build powerful spells with 3-card combinations (Lead → Amplify → Finish)
-- 👥 **Room System**: Create/join game rooms with friends
-- 🎭 **Character Selection**: Choose your mage and customize your playstyle
-- 📱 **Responsive Design**: Play on desktop, tablet, or mobile
-- 🏆 **Tournament System**: Win medals to claim ultimate victory
-- 🐳 **Docker Ready**: Easy deployment with Docker containers
+- 🔥 **Многопользовательская игра в реальном времени**: Живой геймплей на основе WebSocket
+- ⚡ **Двухфазный бой**: Стратегическое планирование с последующим взрывным исполнением заклинаний  
+- 🎯 **Комбинации карт**: Создавайте мощные заклинания с 3-карточными комбинациями (Лидер → Усиление → Финиш)
+- 👥 **Система комнат**: Создавайте/присоединяйтесь к игровым комнатам с друзьями
+- 🎭 **Выбор персонажа**: Выберите своего мага и настройте стиль игры
+- 📱 **Адаптивный дизайн**: Играйте на компьютере, планшете или мобильном устройстве
+- 🏆 **Турнирная система**: Выигрывайте медали для достижения окончательной победы
+- 🐳 **Готов к Docker**: Простое развертывание с Docker контейнерами
 
-## 🚀 Quick Start with Docker (Recommended)
+## 🚀 Быстрый старт с Docker (Рекомендуется)
 
-### Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running
-- [Docker Compose](https://docs.docker.com/compose/install/) (usually included with Docker Desktop)
+### Предварительные требования
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) установлен и запущен
+- [Docker Compose](https://docs.docker.com/compose/install/) (обычно включен в Docker Desktop)
 
-### 1. Clone the Repository
+### 1. Клонирование репозитория
 ```bash
 git clone https://github.com/Sonofrya/mage-duel-web-game.git
 cd mage-duel-web-game
 ```
 
-### 2. Start with Docker (Windows)
+### 2. Запуск с Docker (Windows)
 ```bash
-# Simply double-click the batch file
+# Просто дважды кликните на bat файл
 docker-start.bat
 
-# Or run manually:
+# Или запустите вручную:
 docker-compose up --build -d
 ```
 
-### 3. Access the Game
-- 🌐 **Web Application**: http://localhost:8080
-- 🔌 **WebSocket Server**: ws://localhost:8081
-- 🗄️ **Database**: localhost:5432
+### 3. Доступ к игре
+- 🌐 **Веб-приложение**: http://localhost:8080
+- 🔌 **WebSocket сервер**: ws://localhost:8081
+- 🗄️ **База данных**: localhost:5432
 
-### 4. Useful Docker Commands
+### 4. Полезные команды Docker
 ```bash
-# View logs
+# Просмотр логов
 docker-compose logs -f
 
-# Stop all services
+# Остановка всех сервисов
 docker-compose stop
 
-# Stop and remove containers
+# Остановка и удаление контейнеров
 docker-compose down
 
-# Restart services
+# Перезапуск сервисов
 docker-compose restart
 
-# Remove all data (database included)
+# Удаление всех данных (включая базу данных)
 docker-compose down -v
 ```
 
-## 🛠️ Manual Installation (Alternative)
+## 🛠️ Ручная установка (Альтернатива)
 
-### Requirements
-- PHP 8.0 or higher
-- PostgreSQL 12 or higher
+### Требования
+- PHP 8.0 или выше
+- PostgreSQL 12 или выше
 - Composer
-- Web server (Apache/Nginx) or PHP built-in server
+- Веб-сервер (Apache/Nginx) или встроенный сервер PHP
 
-### 1. Clone and Install Dependencies
+### 1. Клонирование и установка зависимостей
 ```bash
 git clone https://github.com/Sonofrya/mage-duel-web-game.git
 cd mage-duel-web-game
 composer install
 ```
 
-### 2. Database Setup
-1. Install PostgreSQL
-2. Create user `admin` with password `1`:
+### 2. Настройка базы данных
+1. Установите PostgreSQL
+2. Создайте пользователя `admin` с паролем `1`:
 ```sql
 CREATE USER admin WITH PASSWORD '1';
 ALTER USER admin CREATEDB;
 ```
-3. Run database setup:
+3. Запустите настройку базы данных:
 ```bash
 start_database.bat  # Windows
-# or
+# или
 psql -f setup_database.sql  # Linux/macOS
 ```
 
-### 3. Start Services
+### 3. Запуск сервисов
 ```bash
-# Start WebSocket server
+# Запуск WebSocket сервера
 php server.php
 
-# Start web server (in another terminal)
+# Запуск веб-сервера (в другом терминале)
 php -S localhost:8000
 ```
 
-## Структура проекта
+## 📁 Структура проекта
 
 ```
 magegame/
@@ -120,13 +120,14 @@ magegame/
 └── README.md             # Этот файл
 ```
 
-## API Endpoints
+## 🔌 API Endpoints
 
 ### Комнаты
 - `GET get_rooms.php` - Получить список комнат
 - `POST create_room.php` - Создать комнату
 - `POST join_room.php` - Войти в комнату
 - `POST leave_room.php` - Покинуть комнату
+- `POST delete_room.php` - Удалить комнату (только создатель)
 
 ### Игроки
 - `POST update_character.php` - Обновить персонажа
@@ -137,7 +138,7 @@ magegame/
 - `POST send_invite.php` - Отправить приглашение
 - `GET check_invitations.php` - Проверить приглашения
 
-## WebSocket Events
+## 🌐 WebSocket События
 
 ### Клиент -> Сервер
 - `joinRoom` - Присоединиться к комнате
@@ -154,7 +155,7 @@ magegame/
 - `gameAction` - Действие в игре
 - `timer` - Обновление таймера
 
-## Конфигурация
+## ⚙️ Конфигурация
 
 ### База данных (db.php)
 ```php
@@ -171,143 +172,127 @@ $config = [
 ```php
 $config = [
     'host' => '0.0.0.0',
-    'port' => 8080,
+    'port' => 8081,
     'max_connections' => 1000
 ];
 ```
 
-## Разработка
+## 🎯 Игровая механика
 
-### Добавление новых функций
-1. Создайте PHP endpoint для API
-2. Добавьте соответствующий JavaScript код
-3. Обновите WebSocket обработчики при необходимости
-4. Добавьте CSS стили для UI
+### Фаза 1 - Создание заклинания (120 секунд)
+- Выберите до 3 карт из руки
+- Карты должны следовать определенному порядку: Позиция 1 → Позиция 2 → Позиция 3
+- Стратегическое планирование времени и построение комбинаций
 
-### Отладка
-- Логи WebSocket сервера выводятся в консоль
-- Ошибки PHP записываются в error_log.txt
-- Используйте браузерные инструменты разработчика для отладки JavaScript
+### Фаза 2 - Исполнение заклинания
+- Карты активируются в последовательности с визуальными эффектами
+- Применяется урон, лечение и специальные эффекты
+- Последний оставшийся маг выигрывает раунд
 
-## Лицензия
-Этот проект создан для образовательных целей.
+### Типы карт
+- **Позиция 1**: Карты для первой позиции в руке
+- **Позиция 2**: Карты для второй позиции в руке  
+- **Позиция 3**: Карты для третьей позиции в руке (с приоритетом)
 
-## 🐳 Docker Configuration
+## 🐳 Конфигурация Docker
 
-### Architecture
-The Docker setup includes:
-- **PostgreSQL**: Database server with automatic initialization
-- **PHP/Apache**: Web application server
-- **WebSocket**: Real-time communication server
-- **Nginx**: Reverse proxy (optional, for production)
+### Архитектура
+Настройка Docker включает:
+- **PostgreSQL**: Сервер базы данных с автоматической инициализацией
+- **PHP/Apache**: Сервер веб-приложения
+- **WebSocket**: Сервер связи в реальном времени
+- **Nginx**: Обратный прокси (опционально, для продакшена)
 
-### Environment Variables
-Create a `.env` file from `.env.example`:
+### Переменные окружения
+Создайте файл `.env` из `.env.example`:
 ```bash
 cp .env.example .env
 ```
 
-Key variables:
-- `DB_*`: Database connection settings
-- `WEBSOCKET_*`: WebSocket server configuration
-- `APP_*`: Application settings
+Ключевые переменные:
+- `DB_*`: Настройки подключения к базе данных
+- `WEBSOCKET_*`: Конфигурация WebSocket сервера
+- `APP_*`: Настройки приложения
 
-### Development vs Production
-- **Development**: Use `docker-compose up` for basic setup
-- **Production**: Use `docker-compose --profile production up` to include Nginx
+### Разработка vs Продакшен
+- **Разработка**: Используйте `docker-compose up` для базовой настройки
+- **Продакшен**: Используйте `docker-compose --profile production up` для включения Nginx
 
-### Troubleshooting Docker
+### Устранение неполадок Docker
 ```bash
-# Check container status
+# Проверка статуса контейнеров
 docker-compose ps
 
-# View container logs
+# Просмотр логов контейнеров
 docker-compose logs [service-name]
 
-# Rebuild containers
+# Пересборка контейнеров
 docker-compose up --build
 
-# Reset everything (WARNING: deletes database)
+# Сброс всего (ВНИМАНИЕ: удаляет базу данных)
 docker-compose down -v
 ```
 
-## 🎯 Game Mechanics
+## 🛠️ Разработка
 
-### Phase 1 - Spell Crafting (100 seconds)
-- Select up to 3 cards from your hand
-- Cards must follow specific order: Lead → Amplify → Finish
-- Strategic timing and combination building
-
-### Phase 2 - Spell Execution
-- Cards activate in sequence with visual effects
-- Apply damage, healing, and special effects
-- Last mage standing wins the round
-
-### Card Types
-- **Lead Cards**: Can only be first in sequence
-- **Amplify Cards**: Can only be second in sequence  
-- **Finish Cards**: Can only be third in sequence
-
-## 🛠️ Development
-
-### Project Structure
+### Структура проекта
 ```
 mage-duel-web-game/
-├── docker/                 # Docker configurations
-├── src/                    # PHP source code
-├── js/                     # JavaScript files
-├── style/                  # CSS styles
-├── images/                 # Game assets
-├── vendor/                 # Composer dependencies
-├── Dockerfile              # Main Docker image
-├── docker-compose.yml      # Multi-service setup
-└── README.md              # This file
+├── docker/                 # Конфигурации Docker
+├── src/                    # Исходный код PHP
+├── js/                     # JavaScript файлы
+├── style/                  # CSS стили
+├── images/                 # Игровые ресурсы
+├── vendor/                 # Зависимости Composer
+├── Dockerfile              # Основной образ Docker
+├── docker-compose.yml      # Многосервисная настройка
+└── README.md              # Этот файл
 ```
 
-### Adding Features
-1. Create PHP endpoint for API
-2. Add corresponding JavaScript code
-3. Update WebSocket handlers if needed
-4. Add CSS styles for UI
-5. Test with Docker environment
+### Добавление функций
+1. Создайте PHP endpoint для API
+2. Добавьте соответствующий JavaScript код
+3. Обновите WebSocket обработчики при необходимости
+4. Добавьте CSS стили для UI
+5. Протестируйте в Docker окружении
 
-### Debugging
-- **WebSocket logs**: `docker-compose logs websocket`
-- **Web app logs**: `docker-compose logs web`
-- **Database logs**: `docker-compose logs postgres`
-- **All logs**: `docker-compose logs -f`
+### Отладка
+- **Логи WebSocket**: `docker-compose logs websocket`
+- **Логи веб-приложения**: `docker-compose logs web`
+- **Логи базы данных**: `docker-compose logs postgres`
+- **Все логи**: `docker-compose logs -f`
 
-## 📈 Roadmap
+## 📈 Планы развития
 
-- [ ] Mobile app (React Native)
-- [ ] Tournament brackets
-- [ ] Custom card editor
-- [ ] Spectator mode
-- [ ] AI opponents
-- [ ] Multi-language support
-- [ ] Advanced statistics
+- [ ] Мобильное приложение (React Native)
+- [ ] Турнирные сетки
+- [ ] Редактор пользовательских карт
+- [ ] Режим наблюдателя
+- [ ] ИИ противники
+- [ ] Поддержка нескольких языков
+- [ ] Расширенная статистика
 
-## 🤝 Contributing
+## 🤝 Участие в разработке
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Форкните репозиторий
+2. Создайте ветку функции (`git checkout -b feature/amazing-feature`)
+3. Зафиксируйте изменения (`git commit -m 'Добавить удивительную функцию'`)
+4. Отправьте в ветку (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
 
-## 📄 License
+## 📄 Лицензия
 
-This project is created for educational purposes. Feel free to use and modify as needed.
+Этот проект создан в образовательных целях. Свободно используйте и изменяйте по необходимости.
 
-## 🆘 Support
+## 🆘 Поддержка
 
-If you encounter issues:
-1. Check the [Issues](https://github.com/Sonofrya/mage-duel-web-game/issues) page
-2. Review Docker logs: `docker-compose logs -f`
-3. Ensure all dependencies are installed
-4. Verify database connection settings
-5. Make sure WebSocket server is running
+Если у вас возникли проблемы:
+1. Проверьте страницу [Issues](https://github.com/Sonofrya/mage-duel-web-game/issues)
+2. Просмотрите логи Docker: `docker-compose logs -f`
+3. Убедитесь, что все зависимости установлены
+4. Проверьте настройки подключения к базе данных
+5. Убедитесь, что WebSocket сервер запущен
 
 ---
 
-**Built with ❤️ for the gaming community**
+**Создано с ❤️ для игрового сообщества**
