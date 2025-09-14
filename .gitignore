@@ -1,0 +1,50 @@
+# PHP
+vendor/
+composer.lock
+.env
+error_log.txt
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Docker
+docker-data/
+.docker/
+
+# Database
+*.sqlite
+*.db
+
+# Cache
+cache/
+tmp/
+temp/
+
+# Logs
+logs/
+*.log
+
+# Node modules (если будете использовать)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+build/
+dist/
+
+# Environment files
+.env.local
+.env.production
+.env.staging

@@ -21,8 +21,16 @@ $invitation = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($invitation) {
     logError('Приглашение получено: ' . $invitation['inviter_login'] . ' -> ' . $login . ' для комнаты ' . $invitation['room_id']);
-    echo json_encode(['inviter_login' => $invitation['inviter_login'], 'room_id' => $invitation['room_id']]);
+    echo json_encode([
+        'success' => true,
+        'inviter_login' => $invitation['inviter_login'], 
+        'room_id' => $invitation['room_id']
+    ]);
 } else {
-    echo json_encode(['inviter_login' => null, 'room_id' => null]);
+    echo json_encode([
+        'success' => false,
+        'inviter_login' => null, 
+        'room_id' => null
+    ]);
 }
 ?>

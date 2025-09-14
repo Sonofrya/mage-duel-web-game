@@ -53,10 +53,11 @@ try {
 
     foreach ($selected_cards as $cardType => $cardId) {
         if ($cardId) {
-            error_log("Inserting into Chosen_cards: id_player=" . $currentPlayer['id_player'] . ", id_card=" . $cardId);
-            $stmt = $conn->prepare("INSERT INTO Chosen_cards (id_player, id_card) VALUES (:id_player, :id_card)");
+            error_log("Inserting into Chosen_cards: id_player=" . $currentPlayer['id_player'] . ", id_card=" . $cardId . ", card_position=" . $cardType);
+            $stmt = $conn->prepare("INSERT INTO Chosen_cards (id_player, id_card, card_position) VALUES (:id_player, :id_card, :card_position)");
             $stmt->bindParam(':id_player', $currentPlayer['id_player'], PDO::PARAM_INT);
             $stmt->bindParam(':id_card', $cardId, PDO::PARAM_INT);
+            $stmt->bindParam(':card_position', $cardType, PDO::PARAM_INT);
             $stmt->execute();
         }
     }

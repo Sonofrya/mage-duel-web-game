@@ -36,6 +36,7 @@ body{
     display: flex;
     justify-content: flex-start;
     margin: 10px 0 20px 0;
+    padding-left: 0;
     animation: slideInFromTop 0.8s ease-out;
     opacity: 0;
     animation-fill-mode: forwards;
@@ -45,47 +46,45 @@ body{
     color: #FFE629;
     font-size: 1.2vw;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     padding: 8px 15px;
-    background: rgba(255, 230, 41, 0.1);
-    border: 1px solid rgba(255, 230, 41, 0.3);
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     animation: fadeInScale 0.6s ease-out 0.1s both;
 }
 
 .user-name:hover {
-    background: rgba(255, 230, 41, 0.2);
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 230, 41, 0.3);
+    color: #FFF700;
 }
 
 .logout-btn {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(45, 45, 45, 0.9);
-    border: 1px solid rgba(228, 40, 40, 0.4);
-    color: #E42828;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 1vw;
+    background: #E42828;
+    border: 2px solid #E42828;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.2vw;
+    font-weight: bold;
     cursor: pointer;
-    transition: all 0.2s ease;
-    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
     z-index: 1000;
+    box-shadow: 0 2px 8px rgba(228, 40, 40, 0.3);
 }
 
 .logout-btn:hover {
-    background: rgba(228, 40, 40, 0.1);
-    border-color: rgba(228, 40, 40, 0.6);
-    color: #F19393;
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #E42828;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
 }
 
 .logout-btn:active {
-    background: rgba(228, 40, 40, 0.2);
-    color: #E42828;
+    background: #F19393;
+    border-color: #F19393;
+    color: #ffffff;
+    transform: translateY(0);
 }
 
 .room_box p {
@@ -109,9 +108,9 @@ body{
     .logout-btn {
         top: 15px;
         right: 15px;
-        font-size: 1.2vw;
-        padding: 6px 12px;
-        border-radius: 4px;
+        font-size: 1.4vw;
+        padding: 10px 20px;
+        border-radius: 6px;
     }
 }
 
@@ -200,6 +199,53 @@ body{
 }
 
 .come_in:disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-color: rgba(102, 102, 102, 0.3);
+}
+
+.room-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.delete-room {
+    font-size: 1.2vw;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: linear-gradient(135deg, #E42828, #FF4444);
+    border: 1px solid rgba(228, 40, 40, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-room:hover {
+    background: linear-gradient(135deg, #FF4444, #FF6666);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(228, 40, 40, 0.4);
+    border-color: #E42828;
+}
+
+.delete-room:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(228, 40, 40, 0.3);
+}
+
+.delete-room:disabled {
+    background: linear-gradient(135deg, #666, #555);
+    color: #999;
+    cursor: not-allowed;
+    border-color: rgba(102, 102, 102, 0.3);
+}
+
+.delete-room:disabled:hover {
     transform: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     border-color: rgba(102, 102, 102, 0.3);
@@ -412,58 +458,140 @@ body{
     color: #FFE629;
  }
 
- .invite-box{
-    position: absolute;
-    
-    right: 20px;
-    bottom: 20px;
-    background-color: #303030;
-    width: 300px;
-    
- }
+.invite-box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #252525;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(255, 230, 41, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: none;
+}
+
+.invite-box.show {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Радужный градиент убран */
+
+/* Overlay для приглашения */
+.invite-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+.invite-overlay.show {
+    opacity: 1;
+}
 
 
 
- .invite-box-content{
-    padding: 10px 5px;
+.invite-box-content{
+    padding: 30px 25px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
-    
     position: relative;
-    font-size: medium;
+    font-size: 16px;
+    color: #ffffff;
+}
 
- }
-
- .close-btn{
-    position: absolute;
-    left: 3px;
-    top: 0px;
-    font-size: large;
-    cursor: pointer;
- }
-
- .close-btn:hover{
+.invite-title {
+    font-size: 24px;
+    font-weight: bold;
     color: #FFE629;
- }
+    margin: 0 0 15px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
- .btns{
-    margin-top: 20px;
+.inviter {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 0 25px 0;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили крестика убраны */
+
+.btns{
+    margin-top: 25px;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
- }
+    justify-content: space-between;
+    gap: 20px;
+}
 
- .btns button{
-    width: 120px;
-    height: 40px;
-    font-size: larger;
+.btns button{
+    flex: 1;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
-    color: white;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
- }
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btns button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btns button:hover::before {
+    left: 100%;
+}
+
+.btns .yes {
+    background: linear-gradient(135deg, #51E03F, #4CAF50);
+    color: white;
+    box-shadow: 0 4px 15px rgba(81, 224, 63, 0.3);
+}
+
+.btns .yes:hover {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(81, 224, 63, 0.4);
+}
+
+.btns .no {
+    background: linear-gradient(135deg, #E42828, #d32f2f);
+    color: white;
+    box-shadow: 0 4px 15px rgba(228, 40, 40, 0.3);
+}
+
+.btns .no:hover {
+    background: linear-gradient(135deg, #d32f2f, #b71c1c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(228, 40, 40, 0.4);
+}
 
  .yes{
     background-color: #51E03F;
@@ -547,10 +675,7 @@ body{
     box-shadow: 0 0 20px rgba(255, 230, 41, 0.5);
 }
 
-/* Анимация для приглашения */
-.invite-box {
-    animation: slideInFromTop 0.5s ease-out;
-}
+/* Анимация для приглашения уже определена выше */
 
 /* Улучшенная анимация для кнопок персонажей */
 .pick div {

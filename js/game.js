@@ -30,9 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const maxReconnectAttempts = 5;
     const reconnectDelay = 3000;
 
+    // Получаем room_id из URL сразу
+    const urlParams = new URLSearchParams(window.location.search);
+    room_id = urlParams.get('room_id');
+
     function connectWebSocket() {
         try {
-            socket = new WebSocket('ws://localhost:8080');
+            socket = new WebSocket('ws://localhost:8081');
 
             socket.onopen = function(event) {
                 console.log('WebSocket is open now.');
@@ -113,9 +117,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     leaveButton.addEventListener('click', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        room_id = urlParams.get('room_id');
-
         fetch('leave_room.php', {
             method: 'POST',
             headers: {
@@ -126,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = 'php.php';
+                window.location.href = 'room.html';
             } else {
                 console.error('Ошибка при выходе из комнаты:', data.message);
             }
@@ -177,9 +178,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function loadGameInfo() {
-        const urlParams = new URLSearchParams(window.location.search);
-        room_id = urlParams.get('room_id');
-
         fetch(`get_game_info.php?room_id=${room_id}`)
             .then(response => {
                 if (!response.ok) {
@@ -860,12 +858,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('Ошибка при выходе из комнаты:', data.message);
                 }
                 // Все равно перенаправляем в меню
-                window.location.href = 'php.php';
+                window.location.href = 'room.html';
             })
             .catch(error => {
                 console.error('Ошибка:', error);
                 // Все равно перенаправляем в меню
-                window.location.href = 'php.php';
+                window.location.href = 'room.html';
             });
         });
 
@@ -878,7 +876,7 @@ document.addEventListener('DOMContentLoaded', function() {
             countdownElement.textContent = countdown;
             if (countdown <= 0) {
                 clearInterval(countdownInterval);
-                window.location.href = 'php.php';
+                window.location.href = 'room.html';
             }
         }, 1000);
 
@@ -903,7 +901,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Автоматический возврат в меню через 15 секунд
         setTimeout(() => {
             if (document.getElementById('winnerModal')) {
-                window.location.href = 'php.php';
+                window.location.href = 'room.html';
             }
         }, 15000);
     }

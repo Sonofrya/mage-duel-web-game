@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const analogInfo = document.querySelector('.analog-info');
     const roomsContainer = document.getElementById('roomsContainer');
     const inviteBox = document.getElementById('invite-box');
-    const closeInviteBtn = document.getElementById('close-btn');
+    const inviteOverlay = document.getElementById('invite-overlay');
     const yesBtn = document.querySelector('.yes');
     const noBtn = document.querySelector('.no');
     const inviterElement = document.querySelector('.inviter');
@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     inviteBox.style.display = 'none';
+    inviteOverlay.style.display = 'none';
 
     charIcons.forEach(icon => {
         icon.addEventListener('click', function() {
@@ -129,6 +130,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     const playerStatus = room.player_count === 2 ? 'Полная' : 'Свободно';
                     const statusColor = room.player_count === 2 ? '#E42828' : '#51E03F';
                     
+                    // Проверяем, является ли текущий пользователь создателем комнаты
+                    const currentUser = getCookie('login');
+                    const isCreator = room.creator === currentUser;
+                    
                     roomDiv.innerHTML = `
                         <div class="room-info">
                             <p class="room-creator">👤 ${room.creator}</p>
@@ -136,9 +141,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="room-players">👥 ${room.player_count}/2 игроков</p>
                             <p style="color: ${statusColor}; font-size: 1vw;">${playerStatus}</p>
                         </div>
-                        <button type="button" class="come_in" data-room-id="${room.room_id}" ${room.player_count === 2 ? 'disabled' : ''}>
-                            ${room.player_count === 2 ? 'Полная' : 'Войти'}
-                        </button>
+                        <div class="room-buttons">
+                            <button type="button" class="come_in" data-room-id="${room.room_id}" ${room.player_count === 2 ? 'disabled' : ''}>
+                                ${room.player_count === 2 ? 'Полная' : 'Войти'}
+                            </button>
+                            ${isCreator ? `<button type="button" class="delete-room" data-room-id="${room.room_id}" title="Удалить комнату">🗑️</button>` : ''}
+                        </div>
                     `;
                     roomsContainer.appendChild(roomDiv);
                 }
@@ -176,6 +184,50 @@ document.addEventListener('DOMContentLoaded', function() {
                     .catch(error => console.error('Error:', error));
                 });
             });
+
+            // Обработчик кнопки удаления комнаты
+            document.querySelectorAll('.delete-room').forEach(button => {
+                button.addEventListener('click', function() {
+                    const roomId = this.getAttribute('data-room-id');
+                    
+                    if (confirm('Вы уверены, что хотите удалить эту комнату? Это действие нельзя отменить.')) {
+                        // Показываем индикатор загрузки
+                        this.textContent = '⏳';
+                        this.disabled = true;
+                        
+                        fetch('delete_room.php', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: `room_id=${roomId}`
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Анимация успешного удаления
+                                this.textContent = '✅';
+                                this.style.background = 'linear-gradient(135deg, #8CEC7F, #51E03F)';
+                                
+                                setTimeout(() => {
+                                    // Обновляем список комнат
+                                    loadRooms();
+                                }, 1000);
+                            } else {
+                                alert('Ошибка при удалении комнаты: ' + data.message);
+                                this.textContent = '🗑️';
+                                this.disabled = false;
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Ошибка при удалении комнаты');
+                            this.textContent = '🗑️';
+                            this.disabled = false;
+                        });
+                    }
+                });
+            });
         })
         .catch(error => console.error('Error:', error));
     }
@@ -184,25 +236,67 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch('check_invitations.php')
         .then(response => response.json())
         .then(data => {
-            if (data.inviter_login && data.room_id) {
+            if (data.success && data.inviter_login && data.room_id) {
                 console.log('Приглашение получено:', data);
                 inviterElement.textContent = data.inviter_login;
-                inviteBox.style.display = 'block';
                 inviteBox.setAttribute('data-room-id', data.room_id);
+                
+                // Показываем приглашение с анимацией
+                inviteOverlay.style.display = 'block';
+                inviteBox.style.display = 'block';
+                
+                // Небольшая задержка для плавной анимации
+                setTimeout(() => {
+                    inviteOverlay.classList.add('show');
+                    inviteBox.classList.add('show');
+                }, 50);
             } else {
-                inviteBox.style.display = 'none';
+                // Скрываем приглашение только если оно было показано
+                if (inviteBox.classList.contains('show')) {
+                    inviteBox.classList.remove('show');
+                    inviteOverlay.classList.remove('show');
+                    setTimeout(() => {
+                        inviteOverlay.style.display = 'none';
+                    }, 300);
+                }
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error checking invitations:', error);
+            // Скрываем приглашение при ошибке
+            if (inviteBox.classList.contains('show')) {
+                inviteBox.classList.remove('show');
+                inviteOverlay.classList.remove('show');
+                setTimeout(() => {
+                    inviteOverlay.style.display = 'none';
+                }, 300);
+            }
+        });
     }
 
-    closeInviteBtn.addEventListener('click', function() {
-        inviteBox.style.display = 'none';
+    // Обработчик крестика убран
+
+    // Закрытие по клику на overlay
+    inviteOverlay.addEventListener('click', function() {
+        inviteBox.classList.remove('show');
+        inviteOverlay.classList.remove('show');
+        setTimeout(() => {
+            inviteBox.style.display = 'none';
+            inviteOverlay.style.display = 'none';
+        }, 300);
     });
 
     yesBtn.addEventListener('click', function() {
         const roomId = inviteBox.getAttribute('data-room-id');
-        fetch('join_room.php', {
+        
+        // Анимация нажатия кнопки
+        yesBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            yesBtn.style.transform = 'scale(1)';
+        }, 150);
+        
+        // Сначала удаляем приглашение из БД
+        fetch('delete_invitation.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -212,16 +306,72 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                window.location.href = `wait.html?room_id=${roomId}`;
+                // Затем входим в комнату
+                return fetch('join_room.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `room_id=${roomId}`
+                });
+            } else {
+                throw new Error('Ошибка при удалении приглашения: ' + data.message);
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                inviteBox.classList.remove('show');
+                inviteOverlay.classList.remove('show');
+                setTimeout(() => {
+                    window.location.href = `wait.html?room_id=${roomId}`;
+                }, 300);
             } else {
                 alert('Ошибка при входе в комнату: ' + data.message);
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Ошибка при обработке приглашения');
+        });
     });
 
     noBtn.addEventListener('click', function() {
-        inviteBox.style.display = 'none';
+        const roomId = inviteBox.getAttribute('data-room-id');
+        
+        // Анимация нажатия кнопки
+        noBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            noBtn.style.transform = 'scale(1)';
+        }, 150);
+        
+        // Удаляем приглашение из БД
+        fetch('delete_invitation.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `room_id=${roomId}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Приглашение отклонено и удалено из БД');
+            } else {
+                console.error('Ошибка при удалении приглашения:', data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        
+        // Скрываем приглашение
+        inviteBox.classList.remove('show');
+        inviteOverlay.classList.remove('show');
+        setTimeout(() => {
+            inviteBox.style.display = 'none';
+            inviteOverlay.style.display = 'none';
+        }, 300);
     });
 
     loadRooms();

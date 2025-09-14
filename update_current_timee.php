@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         logError("Current time from database: " . $current_time->format('Y-m-d H:i:s'));
 
         
-        $current_time_formatted = $current_time->format('Y-m-d H:i:s');
-        $current_time->f = 0;     
+        $current_time_formatted = $current_time->format('Y-m-d H:i:s');     
         
         $stmt = $conn->prepare("UPDATE Games SET time_start_round = :current_time WHERE id_game = :room_id");
         $stmt->bindParam(':room_id', $room_id);

@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS Players (
     id_player SERIAL PRIMARY KEY,
     id_game INTEGER NOT NULL,
     login VARCHAR(50) NOT NULL,
-    lives INTEGER DEFAULT 3,
+    lives INTEGER DEFAULT 20,
     tokens INTEGER DEFAULT 0,
     cards_chosen BOOLEAN DEFAULT FALSE,
     ready BOOLEAN DEFAULT FALSE,
@@ -93,6 +93,14 @@ CREATE TABLE IF NOT EXISTS Invitations (
     FOREIGN KEY (invited_login) REFERENCES Users(login) ON DELETE CASCADE
 );
 
+-- Создание таблицы активности комнат
+CREATE TABLE IF NOT EXISTS room_activity (
+    id_game INTEGER PRIMARY KEY,
+    last_activity TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_game) REFERENCES Games(id_game) ON DELETE CASCADE
+);
+
 -- Создание индексов для улучшения производительности
 CREATE INDEX IF NOT EXISTS idx_games_creator ON Games(creator_login);
 CREATE INDEX IF NOT EXISTS idx_players_game ON Players(id_game);
@@ -102,6 +110,7 @@ CREATE INDEX IF NOT EXISTS idx_chosen_cards_player ON Chosen_cards(id_player);
 CREATE INDEX IF NOT EXISTS idx_spells_player ON Spells(id_player);
 CREATE INDEX IF NOT EXISTS idx_invitations_invited ON Invitations(invited_login);
 CREATE INDEX IF NOT EXISTS idx_invitations_status ON Invitations(status);
+CREATE INDEX IF NOT EXISTS idx_room_activity_last ON room_activity(last_activity);
 
 -- Создание функции для обновления updated_at
 CREATE OR REPLACE FUNCTION update_updated_at_column()

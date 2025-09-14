@@ -9,7 +9,6 @@ try {
     $stmt = $conn->prepare("
         SELECT 
             g.id_game,
-            g.game_name,
             g.created_at,
             ra.last_activity,
             ra.created_at as activity_created,
@@ -17,7 +16,7 @@ try {
         FROM Games g
         LEFT JOIN room_activity ra ON g.id_game = ra.id_game
         LEFT JOIN Players p ON g.id_game = p.id_game
-        GROUP BY g.id_game, g.game_name, g.created_at, ra.last_activity, ra.created_at
+        GROUP BY g.id_game, g.created_at, ra.last_activity, ra.created_at
         ORDER BY ra.last_activity DESC
     ");
     $stmt->execute();

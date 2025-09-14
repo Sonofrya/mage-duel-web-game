@@ -14,17 +14,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $conn->beginTransaction();
 
-        // Обновляем активность комнаты (PostgreSQL синтаксис)
-        $stmt = $conn->prepare("
-            INSERT INTO room_activity (id_game, last_activity, created_at) 
-            VALUES (:room_id, NOW(), NOW())
-            ON CONFLICT (id_game) DO UPDATE SET last_activity = NOW()
-        ");
+        // Проверяем существование комнаты
+        $stmt = $conn->prepare("SELECT id_game FROM Games WHERE id_game = :room_id");
         $stmt->bindParam(':room_id', $room_id, PDO::PARAM_INT);
         $stmt->execute();
+        $room_exists = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        if (!$room_exists) {
+            throw new Exception('Комната не найдена');
+        }
 
-       
-        $stmt = $conn->prepare("INSERT INTO Players (login, id_game) VALUES (:login, :id_game)");
+        // Добавляем игрока в комнату (с обработкой дублирования)
+        $stmt = $conn->prepare("
+            INSERT INTO Players (login, id_game) 
+            VALUES (:login, :id_game)
+            ON CONFLICT (id_game, login) DO NOTHING
+        ");
         $stmt->bindParam(':login', $login);
         $stmt->bindParam(':id_game', $room_id);
         $stmt->execute();

@@ -21501,3 +21501,502 @@ Current time from database: 2025-09-14 17:46:10
 Received room_id: 41
 Current time from database: 2025-09-14 17:46:10
 Received room_id: 41
+Ошибка базы данных: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "status" of relation "games" does not exist
+LINE 1: ...SERT INTO Games (creator_login, time_start_round, status) VA...
+                                                             ^
+Приглашение отправлено: 1122334 -> 123456 для комнаты 1
+Приглашение получено: 1122334 -> 123456 для комнаты 1
+Приглашение получено: 1122334 -> 123456 для комнаты 1
+Приглашение получено: 1122334 -> 123456 для комнаты 1
+Приглашение отправлено: 123456 -> 1122334 для комнаты 2
+Приглашение получено: 123456 -> 1122334 для комнаты 2
+Приглашение получено: 123456 -> 1122334 для комнаты 2
+Приглашение получено: 123456 -> 1122334 для комнаты 2
+Приглашение отправлено: 123456 -> 1122334 для комнаты 2
+Приглашение получено: 123456 -> 1122334 для комнаты 2
+Приглашение получено: 123456 -> 1122334 для комнаты 2
+Приглашение получено: 123456 -> 1122334 для комнаты 2
+Приглашение отправлено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Пользователь не аутентифицирован
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение отправлено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение отправлено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение удалено: 1122334 для комнаты 3
+Приглашение отправлено: 123456 -> 1122334 для комнаты 3
+Приглашение получено: 123456 -> 1122334 для комнаты 3
+Приглашение удалено: 1122334 для комнаты 3
+Received room_id: 3
+Приглашение отправлено: 123456 -> 1122334 для комнаты 4
+Приглашение получено: 123456 -> 1122334 для комнаты 4
+Приглашение получено: 123456 -> 1122334 для комнаты 4
+Приглашение получено: 123456 -> 1122334 для комнаты 4
+Приглашение получено: 123456 -> 1122334 для комнаты 4
+Приглашение удалено: 1122334 для комнаты 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Current time from database: 2025-09-14 16:45:09
+Received room_id: 4
+Received room_id: 4
+Current time from database: 2025-09-14 16:45:11
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Received room_id: 4
+Приглашение отправлено: 123456 -> 1122334 для комнаты 5
+Приглашение получено: 123456 -> 1122334 для комнаты 5
+Приглашение удалено: 1122334 для комнаты 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:27
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:27
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:28
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:29
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:31
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:32
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:33
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:35
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:48
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:49
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:50:50
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:11
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:12
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:16
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:16
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:20
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:21
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:22
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:27
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:27
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:39
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:40
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:41
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:42
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:44
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:51
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:51:52
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:52:08
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:52:11
+Received room_id: 5
+Received room_id: 5
+Current time from database: 2025-09-14 16:52:12
+Received room_id: 5
+Current time from database: 2025-09-14 16:52:12
+Received room_id: 5
+Current time from database: 2025-09-14 16:52:14
+Received room_id: 5
+Current time from database: 2025-09-14 16:52:15
+Received room_id: 5
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Current time from database: 2025-09-14 16:54:54
+Received room_id: 6
+Received room_id: 6
+Current time from database: 2025-09-14 16:54:55
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Current time from database: 2025-09-14 16:54:57
+Received room_id: 6
+Received room_id: 6
+Current time from database: 2025-09-14 16:54:58
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Received room_id: 6
+Current time from database: 2025-09-14 16:55:09
+Received room_id: 6
+Current time from database: 2025-09-14 16:55:11
+Received room_id: 6
+Received room_id: 7
+Current time from database: 2025-09-14 17:01:55
+Received room_id: 7
+Received room_id: 7
+Received room_id: 8
+Received room_id: 8
+Received room_id: 8
+Received room_id: 8
+Received room_id: 9
+Received room_id: 9
+Received room_id: 9
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:11
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:19
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:19
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:32
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:40
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:40
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:48
+Received room_id: 9
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:07:56
+Received room_id: 9
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:08:06
+Current time from database: 2025-09-14 17:08:06
+Received room_id: 9
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:08:15
+Received room_id: 9
+Current time from database: 2025-09-14 17:08:15
+Received room_id: 9
+Received room_id: 9
+Current time from database: 2025-09-14 17:08:22
+Received room_id: 9
+Current time from database: 2025-09-14 17:08:22
+Received room_id: 9
+Ошибка базы данных: SQLSTATE[23502]: Not null violation: 7 ОШИБКА:  значение NULL в столбце "status" отношения "games" нарушает ограничение NOT NULL
+DETAIL:  Ошибочная строка содержит (42, null, 120, 2025-09-14 20:16:16.139134, 2025-09-14 20:16:16.139134, 112233, 1, 2025-09-14 20:16:16.139134).
+Received room_id: 10
+Received room_id: 10
+Received room_id: 10
+Received room_id: 10
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:03
+Received room_id: 10
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:15
+Received room_id: 10
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:27
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:27
+Received room_id: 10
+Received room_id: 10
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:49
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:49
+Received room_id: 10
+Received room_id: 10
+Current time from database: 2025-09-14 17:17:58
+Current time from database: 2025-09-14 17:17:58
+Received room_id: 10
+Received room_id: 10
+Received room_id: 10
+Current time from database: 2025-09-14 17:18:09
+Received room_id: 10
+Current time from database: 2025-09-14 17:18:09
+Received room_id: 10
+Room 11 deleted by creator 123456

@@ -10,7 +10,7 @@ function logError($message) {
 function getDatabaseTime($conn) {
     $stmt = $conn->query("SELECT NOW() AS db_time");
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-    return new DateTime($result['db_time'], new DateTimeZone('Europe/Moscow'));
+    return new DateTime($result['db_time']);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -30,16 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if ($stmt->execute()) {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($result) {
-                $time_start_round = new DateTime($result['time_start_round'], new DateTimeZone('Europe/Moscow'));
+                $time_start_round = new DateTime($result['time_start_round']);
                 $current_time = getDatabaseTime($conn);
 
                 $interval = $time_start_round->diff($current_time);
                 $interval->f = 0;
 
                 if ($interval->invert) {
-                    
+                    // Время еще не наступило (будущее время)
                     $time_left = 120;
                 } else {
+                    // Время уже прошло
                     $seconds_elapsed = ($interval->days * 24 * 60 * 60) + ($interval->h * 60 * 60) + ($interval->i * 60) + $interval->s;
                     $time_left = 120 - $seconds_elapsed;
                     if ($time_left < 0) {

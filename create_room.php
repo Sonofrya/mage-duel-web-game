@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->beginTransaction();
 
         // Создание комнаты с установкой времени начала раунда
-        $stmt = $conn->prepare("INSERT INTO Games (creator_login, time_start_round, status) VALUES (:login, NOW(), 0)");
+        $stmt = $conn->prepare("INSERT INTO Games (creator_login, time_start_round) VALUES (:login, NOW())");
         $stmt->bindParam(':login', $login);
         if ($stmt->execute()) {
             $room_id = $conn->lastInsertId();

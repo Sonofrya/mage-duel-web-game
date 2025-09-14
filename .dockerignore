@@ -1,0 +1,56 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+README.md
+DOCKER_SETUP.md
+*.md
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Logs
+*.log
+logs/
+
+# Cache
+cache/
+tmp/
+temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts
+build/
+dist/
+
+# Scripts
+*.bat
+*.sh
+
+# Database files
+*.sqlite
+*.db
+
+# Vendor (will be installed in container)
+vendor/

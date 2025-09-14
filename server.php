@@ -353,7 +353,7 @@ class GameServer implements MessageComponentInterface {
 // Конфигурация сервера
 $config = [
     'host' => '0.0.0.0',
-    'port' => 8080,
+    'port' => 8081,
     'max_connections' => 1000
 ];
 
